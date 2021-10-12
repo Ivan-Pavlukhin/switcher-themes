@@ -1,45 +1,60 @@
+.wrapper{
+    width: 100%;
+    min-height: 700px;
+    transition: background-color 350ms;
+}
+
 .switcher:checked ~ .wrapper{
     background-color: rgb(44, 77, 92);
     color: beige;
+    transition: background-color 350ms;
 }
 
 .switcher{
     position: absolute;
+    z-index: 1;
     visibility: hidden;
     top: 30px;
     right: 60px;
 }
 
 .light{
-    display: none;
+    opacity: 0;
+    fill: beige;
+    transition: opacity 350ms;
+}
+
+.dark{
+    fill: rgb(44, 77, 92);
 }
 
 .switcher:checked ~ .light{
-    display: block;
+    opacity: 1;
 }
 
 .switcher:checked ~ .dark{
-    display: none;
+    opacity: 0;
 }
 
 .switcher::after{
     content: '';
     display: block;
     visibility: visible;
-    width: 30px;
-    height: 30px;
-    border: 6px solid rgb(44, 77, 92);
+    width: 45px;
+    height: 45px;
+    border: 3px solid rgb(44, 77, 92);
     border-radius: 50%;
 }
 
 .switcher:checked::after{
-    border: 6px solid #fff;
+    border-color: beige;
 } 
 
 .svg{
     position: absolute;
-    top: 38px;
-    right: 80px;
+    top: 42px;
+    right: 35px;
+    z-index: 0;
     width: 30px;
     height: 30px;
 }
@@ -56,7 +71,3 @@
 
 
 
-.wrapper{
-    width: 100%;
-    min-height: 400px;
-}
