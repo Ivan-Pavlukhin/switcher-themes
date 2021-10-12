@@ -1,0 +1,62 @@
+.switcher:checked ~ .wrapper{
+    background-color: rgb(44, 77, 92);
+    color: beige;
+}
+
+.switcher{
+    position: absolute;
+    visibility: hidden;
+    top: 30px;
+    right: 60px;
+}
+
+.light{
+    display: none;
+}
+
+.switcher:checked ~ .light{
+    display: block;
+}
+
+.switcher:checked ~ .dark{
+    display: none;
+}
+
+.switcher::after{
+    content: '';
+    display: block;
+    visibility: visible;
+    width: 30px;
+    height: 30px;
+    border: 6px solid rgb(44, 77, 92);
+    border-radius: 50%;
+}
+
+.switcher:checked::after{
+    border: 6px solid #fff;
+} 
+
+.svg{
+    position: absolute;
+    top: 38px;
+    right: 80px;
+    width: 30px;
+    height: 30px;
+}
+
+.head{
+    margin-top: 0;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.container{
+    padding: 10px 90px;
+}
+
+
+
+.wrapper{
+    width: 100%;
+    min-height: 400px;
+}
